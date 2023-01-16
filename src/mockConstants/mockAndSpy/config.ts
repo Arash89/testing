@@ -1,4 +1,4 @@
-const SUN = 'Sun'
-const MOON = 'Moon'
+const SUN: string = 'Sun'
+const MOON: string = 'Moon'
 
 export { SUN, MOON }
