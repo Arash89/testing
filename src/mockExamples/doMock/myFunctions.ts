@@ -1,4 +1,4 @@
-import { MOON, SUN } from './config';
+import { MOON, SUN } from './myConfig';
 
 const dayNight = (when: string) => {
   return when === 'day' ? SUN : MOON

@@ -1,4 +1,4 @@
-import * as CONSTANTS from './config';
+import * as CONSTANTS from './myConfig';
 
 describe('mock and spy on constants', () => {
   describe('before spy all constants excepted have their own mocked or actual values', () => {
@@ -9,10 +9,10 @@ describe('mock and spy on constants', () => {
 
     test('their actual value', async () => {
 
-      jest.doMock('./config', () => ({
+      jest.doMock('./myConfig', () => ({
         __esModule: true,
         // this part important because without this, other constants turned to undefined
-        ...jest.requireActual('./config'),
+        ...jest.requireActual('./myConfig'),
         get MOON() {
           return 'My little Moon'
         }
@@ -26,10 +26,10 @@ describe('mock and spy on constants', () => {
 
   describe('after spy we have this opportunity to change value that we need', () => {
     test('change the SUN value', async () => {
-      jest.doMock('./config', () => ({
+      jest.doMock('./myConfig', () => ({
         __esModule: true,
         // this part important because without this, other constants turned to undefined
-        ...jest.requireActual('./config'),
+        ...jest.requireActual('./myConfig'),
         get MOON() {
           return 'Rise and shine'
         }
@@ -45,10 +45,10 @@ describe('mock and spy on constants', () => {
       // if you comment next line it wouldn't work fine as it is using dynamic import
       // for working fine we should use the jest.resetModules()
       jest.resetModules()
-      jest.doMock('./config', () => ({
+      jest.doMock('./myConfig', () => ({
         __esModule: true,
         // this part important because without this, other constants turned to undefined
-        ...jest.requireActual('./config'),
+        ...jest.requireActual('./myConfig'),
         get MOON() {
           return 'My little Moon'
         }

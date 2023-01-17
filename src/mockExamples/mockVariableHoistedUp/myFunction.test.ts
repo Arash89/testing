@@ -1,10 +1,10 @@
 import { dayNight } from './myFunctions';
 
 const mockMoon = jest.fn().mockReturnValue('Salam')
-jest.mock('./config', () => ({
+jest.mock('./myConfig', () => ({
   __esModule: true,
   // this part important because without this, other constants turned to undefined
-  ...jest.requireActual('./config'),
+  ...jest.requireActual('./myConfig'),
   get MOON() {
     return mockMoon()
   }

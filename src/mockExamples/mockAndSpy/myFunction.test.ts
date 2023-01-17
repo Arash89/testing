@@ -1,10 +1,10 @@
-import * as CONSTANTS from './config';
+import * as CONSTANTS from './myConfig';
 import { dayNight } from './myFunctions';
 
-jest.mock('./config', () => ({
+jest.mock('./myConfig', () => ({
   __esModule: true,
   // this part important because without this, other constants turned to undefined
-  ...jest.requireActual('./config'),
+  ...jest.requireActual('./myConfig'),
   get MOON() {
     return 'My little Moon'
   }
@@ -33,7 +33,7 @@ describe('mock and spy on constants', () => {
     })
   })
 
-  describe('', () => {
+  describe('change their return value', () => {
     test('their mocked value', () => {
       // Because of the point is told on top I have to use spy here for moon because
       // if you comment these 2 lines you will get undefined for MOON
